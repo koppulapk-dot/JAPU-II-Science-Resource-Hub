@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JA II PU Science 2026-27 | Student Resource Hub</title>
+  <title>JAPUC II Science 2026-27 | Student Resource Hub</title>
 
   <style>
     :root {
@@ -358,9 +358,52 @@
       height: fit-content;
     }
 
+
+    .static-update-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .static-update-list li {
+      position: relative;
+      padding: 13px 14px 13px 42px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #F8FAFC;
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .static-update-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 14px;
+      top: 12px;
+      width: 20px;
+      height: 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--gold-soft);
+      color: var(--gold-dark);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
     .update-item h4 {
       color: var(--text);
       margin-bottom: 4px;
+    }
+
+    .update-item h4 a {
+      color: var(--text);
+      transition: 0.2s ease;
+    }
+
+    .update-item h4 a:hover {
+      color: var(--gold-dark);
     }
 
     .update-item p {
@@ -465,6 +508,41 @@
       margin-bottom: 12px;
     }
 
+    .horizontal-card {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: auto 1fr minmax(260px, 360px);
+      gap: 18px;
+      align-items: center;
+    }
+
+    .horizontal-card .subject-icon {
+      margin-bottom: 0;
+    }
+
+    .horizontal-card p {
+      margin-bottom: 0;
+    }
+
+    .horizontal-card .resource-list {
+      margin: 0;
+    }
+
+    .latest-message-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .latest-message-card .subject-icon {
+      margin-bottom: 0;
+    }
+
+    .compact-list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .contact-card {
       background:
         linear-gradient(120deg, rgba(18, 60, 124, 0.96), rgba(11, 40, 88, 0.94)),
@@ -509,6 +587,28 @@
       .hero-inner,
       .latest-grid,
       .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .horizontal-card {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+      }
+
+      .horizontal-card .subject-icon {
+        margin-bottom: 12px;
+      }
+
+
+      .latest-message-card {
+        grid-template-columns: 1fr;
+      }
+
+      .latest-message-card .subject-icon {
+        margin-bottom: 12px;
+      }
+
+      .compact-list {
         grid-template-columns: 1fr;
       }
 
@@ -560,7 +660,7 @@
 
 <body>
   <header class="top-strip">
-    <span>JA II PU Science 2026-27</span>
+    <span>JAPUC II Science 2026-27</span>
     <span>Student Resource Hub | Notes, Papers, Assignments & Circulars</span>
   </header>
 
@@ -583,7 +683,7 @@
     <div class="hero-inner">
       <div>
         <div class="badge"><span class="badge-dot"></span> Academic Resources 2026-27</div>
-        <h1>JA II PU Science <span>Student Resource Hub</span></h1>
+        <h1>JAPUC II Science <span>Student Resource Hub</span></h1>
         <p>
           A simple digital archive for students to access important academic documents, subject notes,
           question papers, assignments, circulars, timetable updates, and revision material throughout the year.
@@ -619,61 +719,25 @@
           Please use this page as the common access point for academic files shared by faculty.
         </div>
 
-        <div class="latest-grid">
-          <div class="card">
+        <div class="card latest-message-card">
+          <div class="subject-icon">📌</div>
+          <div>
             <h3>Latest Updates</h3>
-            <p>Recently uploaded academic documents and important announcements can be highlighted here.</p>
-
-            <div class="update-item">
-              <div class="date-badge">Update 01</div>
-              <div>
-                <h4>Physics Important Topics</h4>
-                <p>Replace this text with the actual latest Physics update or Google Drive document link.</p>
-              </div>
-            </div>
-
-            <div class="update-item">
-              <div class="date-badge">Update 02</div>
-              <div>
-                <h4>Chemistry Assignment Sheet</h4>
-                <p>Replace this with the latest Chemistry assignment, test paper, or folder update.</p>
-              </div>
-            </div>
-
-            <div class="update-item">
-              <div class="date-badge">Update 03</div>
-              <div>
-                <h4>Exam Timetable / Circular</h4>
-                <p>Add the latest exam timetable, circular, or announcement reference here.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="access-box">
-            <h3>Access Model</h3>
             <p>
-              This page can work with Google Drive folders. Documents can be kept open to students with the link
-              or restricted for students depending on college preference.
+              All shared documents are kept accessible through Google Drive links and will be updated under the respective sections.
             </p>
 
-            <table class="access-table">
-              <thead>
-                <tr>
-                  <th>Access Level</th>
-                  <th>Suitable Documents</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>General Access</td>
-                  <td>Syllabus, timetable, circulars, model papers</td>
-                </tr>
-                <tr>
-                  <td>Student-Only</td>
-                  <td>Internal notes, assignments, test papers, revision material</td>
-                </tr>
-              </tbody>
-            </table>
+            <ul class="static-update-list compact-list">
+              <li>
+                New notes, assignments, question papers, important questions, and revision material will be available under the relevant subject sections below.
+              </li>
+              <li>
+                Faculty/coordinators need to upload each document only once in the correct Google Drive subject folder.
+              </li>
+              <li>
+                For circulars, timetables, announcements, and CET results, students can use the General Documents and CET Results sections.
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -754,9 +818,20 @@
             <p>English and second-language notes, assignments, and practice papers.</p>
             <ul class="resource-list">
               <li><a href="#" target="_blank">English Resources <span class="tag">Drive Link</span></a></li>
-              <li><a href="#" target="_blank">Kannada / Hindi Resources <span class="tag">Drive Link</span></a></li>
+              <li><a href="#" target="_blank">Kannada / Hindi / Sanskrit Resources <span class="tag">Drive Link</span></a></li>
               <li><a href="#" target="_blank">Language Assignments <span class="tag">Drive Link</span></a></li>
               <li><a href="#" target="_blank">Language Question Papers <span class="tag">Drive Link</span></a></li>
+            </ul>
+          </div>
+
+          <div class="card horizontal-card">
+            <div class="subject-icon">🏆</div>
+            <div>
+              <h3>CET Results</h3>
+              <p>Weekly CET result updates shared for student reference and performance tracking.</p>
+            </div>
+            <ul class="resource-list">
+              <li><a href="#" target="_blank">Weekly Test Results <span class="tag">Drive Link</span></a></li>
             </ul>
           </div>
         </div>
@@ -768,37 +843,37 @@
         <div class="section-title">
           <div class="eyebrow">General Documents</div>
           <h2>Common Academic Resources</h2>
-          <p>Timetables, circulars, model papers, and revision documents required by all students.</p>
+          <p>Class schedules, official circulars, and common announcements required by all students.</p>
         </div>
 
         <div class="grid">
           <div class="card">
             <div class="subject-icon">🗓</div>
-            <h3>Timetable</h3>
-            <p>Class timetable, test timetable, and exam timetable.</p>
+            <h3>Timetables</h3>
+            <p>Access class timetable and exam timetable documents shared by the college.</p>
             <ul class="resource-list">
-              <li><a href="#" target="_blank">Class Timetable <span class="tag">PDF</span></a></li>
-              <li><a href="#" target="_blank">Exam Timetable <span class="tag">PDF</span></a></li>
+              <li><a href="#" target="_blank">Class Timetable <span class="tag">Drive Link</span></a></li>
+              <li><a href="#" target="_blank">Exam Timetable <span class="tag">Drive Link</span></a></li>
             </ul>
           </div>
 
           <div class="card">
             <div class="subject-icon">📢</div>
             <h3>Circulars</h3>
-            <p>Important announcements, instructions, and official circulars.</p>
+            <p>Access official college notices, exam-related circulars, and student instructions.</p>
             <ul class="resource-list">
-              <li><a href="#" target="_blank">Academic Circulars <span class="tag">Drive Link</span></a></li>
+              <li><a href="#" target="_blank">General Circulars <span class="tag">Drive Link</span></a></li>
               <li><a href="#" target="_blank">Exam Circulars <span class="tag">Drive Link</span></a></li>
             </ul>
           </div>
 
           <div class="card">
-            <div class="subject-icon">🎯</div>
-            <h3>Revision Corner</h3>
-            <p>Final exam revision material and consolidated preparation documents.</p>
+            <div class="subject-icon">🔔</div>
+            <h3>Announcements</h3>
+            <p>Access common announcements, reminders, and important notices shared for students.</p>
             <ul class="resource-list">
-              <li><a href="#" target="_blank">Revision Notes <span class="tag">Drive Link</span></a></li>
-              <li><a href="#" target="_blank">Model Papers <span class="tag">Drive Link</span></a></li>
+              <li><a href="#" target="_blank">General Announcements <span class="tag">Drive Link</span></a></li>
+              <li><a href="#" target="_blank">Important Notices <span class="tag">Drive Link</span></a></li>
             </ul>
           </div>
         </div>
@@ -820,7 +895,7 @@
   </main>
 
   <footer class="footer">
-    <p><strong>JA II PU Science 2026-27</strong> | <span class="gold">Student Resource Hub</span></p>
+    <p><strong>JAPUC II Science 2026-27</strong> | <span class="gold">Student Resource Hub</span></p>
     <p>Digital Archive</p>
   </footer>
 </body>
